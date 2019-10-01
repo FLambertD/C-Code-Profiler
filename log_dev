@@ -1,0 +1,135 @@
+commit 65d9945e17096150da70e58c8440bba2ba94fc89
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Fri Jan 11 17:54:56 2019 +0100
+
+    Ajout de commentaire doxygen dans les fichiers src et include.
+    Ajout du dossier html -> generer par doxygen
+
+commit 3d8e46a51971ae4f1201d388b2e711dbec802b9c
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 16:11:33 2019 +0100
+
+    Ajout indication graphique lors du chargement de l'arbre ou de la table des symboles
+    Ajout de .log de différents groupes testés avec le programme
+
+commit 00a59d8e887fb7424bb6bcb131b6fd893e4290d4
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 14:44:44 2019 +0100
+
+    Ajout Déplacement dans l'arbre via des boutons dans la partie arbre graphique
+    Cela impacte aussi la table des symboles lorsque l'on y retourne
+    (Reste la documentation et le rapport à finir)
+
+commit 97b4afce82f45fcf2e7f4dea6e59f3fc6047de1e
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 02:35:40 2019 +0100
+
+    Correction Profilage global
+
+commit 210abae7dc86e677bfdf44892c7d4179857ed012
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 02:25:02 2019 +0100
+
+    Ajout module menu
+    Refonte graphique
+    Executable graphique utilisable a la souris
+
+commit 00eb68d339adf7e18c33d4134720054424f34911
+Merge: 0a3be3a c03557e
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 02:20:02 2019 +0100
+
+    Merge branch 'master' of https://git-etud.u-pem.fr/profiler_kuoch_lambert-delavaquerie
+
+commit 0a3be3a1533c85b185f022ae481dfd776a3a00f3
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Jan 11 02:17:46 2019 +0100
+
+    Refonte globale graphique
+    Ajout du module menu qui gere la partie graphique du menu
+    Executable utilisable uniquement avec la souris
+
+commit c03557e1281a40e9f45613fc2a10bb9bff4fd8d0
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Thu Jan 10 16:42:30 2019 +0100
+
+    Ajout de commentaire au format doxygen dans les fichiers du dossier src et include.
+    Oui, je sais le precedent commit/push est une catastrophe à cause d'un git add *.
+    Sorry my bad
+
+commit 6ed427df19deb67ac28a49abb9d757f1fa673b44
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Wed Jan 9 22:04:23 2019 +0100
+
+    Création des differents dossiers bin, src, doc, include.
+    Fichiers déplacés dans les dossiers.
+    Modification du makefile, après compilation les .o et myprofile sont maintenant dans le dossier bin.
+    Modification des inclusions dans les .c
+
+commit 181058b42d399ffc2c0fc86fb3b3368c475f005e
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Wed Jan 9 20:12:00 2019 +0100
+
+    (Modification par M.Lambert-Delavaquerie)
+    Ajout du module Recap
+    Modification des fichiers
+    Executer programme avec argument -> profile_global.log et profile_test.log
+    Sans argument -> produit profile.log
+    Modification de l'affichage graphique
+
+commit 4d061c3d8ac6ae54a2431c100ed77952c7667cf6
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Fri Dec 21 17:54:14 2018 +0100
+
+    Modif structure arbre: Ajout pere pour faciliter deplacement dans l'arbre dans le futur
+    Modif lecture_fichier: Renvoi de l'arbre correspondant au .log par lecture iterative
+    Modif draw: Couleur lié au temps de la fonction par rapport a la racine choisie et Ajout des "..." quand pas assez d'espace (à revoir)
+    Modif Main: test avec un .log qui contient des freres
+
+commit 5432ec6c6c7253a4c3e823604f2e5cd834cfd629
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Thu Dec 13 17:08:37 2018 +0100
+
+    Module Arbre :
+    -Ajout de la fonction lecture_fichier, qui lit le fichier profile.log,
+    puis ajoute des fils à l'arbre. (Fonction non fini).
+    -Modification de la fonction Ajouter_fils qui prend désormais un
+    pointeur d'un Arbre.
+
+commit ef4330ad6a80eecf4dabd3bc6c709f9daee8b2a2
+Author: flambert <flambert@etud.u-pem.fr>
+Date:   Wed Dec 5 21:03:05 2018 +0100
+
+    Création des fichiers draw.c et draw.h
+    -Definition constantes LONGUEUR HAUTEUR MINI et MINI_TEXT pour la partie graphique
+    -Fonction d'ouverture de fenetre
+    -Fonction d'affichage d'arbre récursive (Nécessite amélioration pour dégradé couleur)
+    -Fonction de fermeture de fenetre apres clic utilisateur
+    Dans Makefile:
+    -Ajout des cibles pour draw.c et draw.h
+    Dans Arbre.c:
+    -Fonction d'ajout de fils
+    -Fonction d'ajout de frere
+    Dans Main.c :
+    -Creation de fils et de freres tests a partir de valeurs chosies
+    -Test d'affichage d'un arbre avec fils et freres
+
+commit de8ae65506476817c3eca4f96f5f8acd3f825229
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Tue Dec 4 16:24:27 2018 +0100
+
+    Création des fichiers Arbre.c et Arbre.h :
+    - déclaration d'une structure représentant l'arbre fils gauche, frere droit
+    - fonction d'allocation d'un noeud de l'arbre
+    - fonction d'affichage de l'arbre
+    Dans le makefile :
+    - ajout des cibles pour Arbre.c et Arbre.h
+    Dans Main.c :
+    - test d'allocation d'un arbre.
+    - inclusion du header Arbre.h
+
+commit fa28c47cd92ae5d7e2c771c5100ffab386e3c1a4
+Author: mkuoch <mkuoch@etud.u-pem.fr>
+Date:   Wed Nov 28 20:32:56 2018 +0100
+
+    Création fichier Main.c, macro_profiler.h, makefile et profile.log
